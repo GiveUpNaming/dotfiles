@@ -1,0 +1,170 @@
+# Get editor completions based on the config schema
+"$schema" = "https://starship.rs/config-schema.json"
+
+
+format = """
+$os\
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$c\
+$cmake\
+$dotnet\
+$golang\
+$gradle\
+$java\
+$lua\
+$nodejs\
+$python\
+$rust\
+$package\
+$fill\
+$container\
+$docker_context\
+"""
+
+[c]
+symbol = " "
+format = "[$symbol($version(-$name))]($style) "
+detect_extensions = ["c", "h", "cpp", "hpp", "cu"]
+detect_files = ["Makefile", "CMakeLists.txt"]
+
+[cmake]
+format = "[cmake($symbol$version)]($style) "
+
+[character]
+# success_symbol = "[➜](bold green)"
+# error_symbol = "[✖](bold red)"
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+[container]
+format = "[$symbol $name]($style) "
+
+[directory]
+use_os_path_sep = true
+style = "#74c7ec"
+repo_root_style = 'bold #89dceb'
+repo_root_format = '[$before_root_path](dimmed $style)[$repo_root]($repo_root_style)[$path]($repo_root_style)[$read_only]($read_only_style) '
+read_only = " 󰌾"
+format = '[$path]($style)[$read_only]($read_only_style) '
+truncation_length = 3
+truncate_to_repo = false
+fish_style_pwd_dir_length = 1
+
+[docker_context]
+symbol = ""
+style = "#06969A"
+format = "[$symbol $context]($style) "
+
+[dotnet]
+symbol = "•NET "
+format = "[$symbol$version( $tfm)]($style) "
+
+[fill]
+symbol = " "
+
+[git_branch]
+symbol = ""
+style = "#96f169"
+format = "[$symbol $branch(:$remote_branch)]($style) "
+
+[git_status]
+ahead = "⇡${count} "
+behind = "⇣${count} "
+conflicted = "[=]${count} "
+deleted = "✕${count} "
+diverged = "⇕⇡${ahead_count} ⇣${behind_count} "
+modified = "!${count} "
+staged = "+${count} "
+stashed = "\\$${count} "
+renamed = "»${count} "
+untracked = "?${count} "
+format = """
+[$ahead_behind](#96f169)\
+[$conflicted](italic red)\
+[$stashed](#8fbcbb)\
+[$deleted](#f07178)\
+[$renamed](#f2a272)\
+[$modified](#fab387)\
+[$staged](#a9b665)\
+[$untracked](#89b4fa)\
+"""
+
+[golang]
+symbol = " go "
+format = "[$symbol($version)]($style) "
+
+[java]
+symbol = " java"
+style = "red"
+format = '[$symbol ($version)]($style) '
+
+[lua]
+symbol = " "
+format = "[$symbol($version)]($style) "
+
+[nodejs]
+symbol = " "
+format = "[$symbol($version)]($style) "
+
+[os]
+disabled = false
+format = " $symbol "
+[os.symbols]
+Alpaquita = "[](#FF0080)"
+Alpine = "[](#0D2149)"
+AlmaLinux = "[[](#264F78)"
+Amazon = "[](#FF9900)"
+Android = "[](#A4C639)"
+Arch = "[](#1793D1)"
+Artix = "[](#1A5A9C)"
+CentOS = "[](#EE2727)"
+Debian = "[](#A80030)"
+DragonFly = "[](#6F2DA8)"
+Emscripten = "[](#5A4F4F)"
+EndeavourOS = "[](#8C1A1A)"
+Fedora = "[](#294172)"
+FreeBSD = "[](#A92D31)"
+Garuda = "[󰛓](#00B4D8)"
+Gentoo = "[](#54487A)"
+HardenedBSD = "[󰞌](#000000)"
+Illumos = "[󰈸](#EA0000)"
+Kali = "[](#557C94)"
+Linux = "[](#FCC624)"
+Mabox = "[](#FFCC00)"
+Macos = "[](#C0CAF5)"
+Manjaro = "[](#35BF5C)"
+Mariner = "[](#0076DE)"
+MidnightBSD = "[](#FFA500)"
+Mint = "[](#87CF3E)"
+NetBSD = "[](#C13A3A)"
+NixOS = "[](#5277C3)"
+OpenBSD = "[󰈺](#2F3030)"
+openSUSE = "[](#73BA25)"
+OracleLinux = "[󰌷](#F80000)"
+Pop = "[](#6F2DA8)"
+Raspbian = "[](#A22846)"
+Redhat = "[](#EE2727)"
+RedHatEnterprise = "[](#EE2727)"
+RockyLinux = "[](#8C1A1A)"
+Redox = "[󰀘](#000000)"
+Solus = "[󰠳](#5294E2)"
+SUSE = "[](#73BA25)"
+Ubuntu = "[](#E95420)"
+Unknown = "[](#4183C4)"
+Void = "[](#00A0FF)"
+Windows = "[󰍲](#C065DB)"
+
+[package]
+symbol = "󰏗 "
+format = "is [$symbol$version](style) "
+
+[python]
+symbol = " "
+format = "[$symbol($version)]($style) "
+
+[rust]
+symbol = "󱘗 "
+format = "[$symbol$version]($style) "

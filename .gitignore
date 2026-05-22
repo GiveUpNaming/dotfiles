@@ -1,0 +1,12 @@
+config/i3/mount.sh
+*.log
+*.pid
+/config/mpd/playlists
+/config/mpd/database
+/config/hypr/bg
+/config/ncmpcpp/lyrics
+.idea
+.vscode
+**/@girs/
+**/node_modules/
+**/.DS_Store

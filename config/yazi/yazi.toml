@@ -1,0 +1,33 @@
+[mgr]
+ratio = [1, 3, 2]
+show_hidden = false
+show_symlink = true
+sort_by = "natural"
+sort_translit = true
+linemode = "permissions"
+
+[preview]
+# Change them to your desired values
+max_width  = 1000
+max_height = 1000
+
+[[plugin.prepend_fetchers]]
+url   = "*"
+run   = "git"
+group = "git"
+
+[[plugin.prepend_previewers]]
+url = "*.tar*"
+run = 'piper --format=url -- tar tf "$1"'
+
+[[plugin.prepend_previewers]]
+url = "*.zip"
+run = 'piper --format=url -- unzip -Z1 "$1"'
+
+[[plugin.prepend_previewers]]
+url = "*.{bash,c,cpp,csharp,conf,fish,glsl,go,html,java,js,jsx,json,jsonc,lua,py,rs,sh,theme,toml,ts,tsx,zsh}"
+run = 'piper -- bat --color=always "$1"'
+
+[[plugin.prepend_previewers]]
+url = "*/"
+run = 'piper -- eza --group-directories-first --icons=always --color=always --tree -L 3 --git "$1"'
