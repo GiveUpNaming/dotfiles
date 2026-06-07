@@ -1,0 +1,134 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "macOS",
+        "type": "builtin",
+        "padding": {
+            "left": 1,
+            "right": 2
+        }
+    },
+    "display": {
+        "separator": " "
+    },
+    "modules": [
+        {
+            "key": "╭─ ",
+            "type": "os",
+            "keyColor": "green",
+            "format": "{3} {12}"
+        },
+        {
+            "type": "kernel",
+            "keyColor": "green",
+            "key": "├─ "
+        },
+        {
+            "type": "de",
+            "keyColor": "green",
+            "key": "├─ "
+        },
+        {
+            "type": "wm",
+            "keyColor": "green",
+            "key": "├─ "
+        },
+        {
+            "type": "terminal",
+            "keyColor": "green",
+            "key": "├─ "
+        },
+        {
+            "type": "shell",
+            "keyColor": "green",
+            "key": "├─ "
+        },
+        {
+            "type": "theme",
+            "keyColor": "green",
+            "key": "├─ "
+        },
+        {
+            "type": "icons",
+            "keyColor": "green",
+            "key": "├─󰀻 "
+        },
+        {
+            "type": "packages",
+            "keyColor": "green",
+            "key": "├─ "
+        },
+        {
+            "type": "uptime",
+            "keyColor": "green",
+            "key": "╰─󰅐 "
+        },
+        "break",
+        {
+            "type": "host",
+            "format": "{/2}{-}{/}{2}{?3} {3}{?}",
+            "keyColor": "yellow",
+            "key": "╭─󰌢 "
+        },
+        {
+            "type": "cpu",
+            "keyColor": "yellow",
+            "key": "├─󰍛 "
+        },
+        {
+            "type": "gpu",
+            "keyColor": "yellow",
+            "key": "├─󰘚 "
+        },
+        {
+            "keyColor": "yellow",
+            "type": "disk",
+            "key": "│─ "
+        },
+        {
+            "type": "memory",
+            "keyColor": "yellow",
+            "key": "├─󰟖 "
+        },
+        {
+            "type": "display",
+            "keyColor": "yellow",
+            "key": "├─󰍹 "
+        },
+        {
+            "type": "battery",
+            "keyColor": "yellow",
+            "key": "╰─󱈑 "
+        },
+        "break",
+        {
+            "type": "font",
+            "keyColor": "magenta",
+            "key": "╭─Font "
+        },
+        {
+            "type": "vulkan",
+            "keyColor": "magenta",
+            "key": "├─GPU-Driver "
+        },
+        {
+            "type": "locale",
+            "keyColor": "magenta",
+            "key": "╰─Locale "
+        },
+        "break",
+        {
+            "type": "colors",
+            "block": {
+                "range": [
+                    0,
+                    7
+                ]
+            }
+        },
+        {
+            "type": "custom",
+            "format": "{#white}󰮯  {#red}󰊠  {#green}󰊠  {#yellow}󰊠  {#blue}󰊠  {#magenta}󰊠  {#cyan}󰊠  {#white}󰊠"
+        }
+    ]
+}
