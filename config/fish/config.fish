@@ -1,19 +1,25 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    set -gx STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
+    if command -q starship
+        starship init fish | source
+    end
+
+    if command -q zoxide
+        zoxide init fish | source
+    end
+
+    function fish_greeting
+        if command -q figlet; and command -q lolcat
+            figlet "Hi, Felix!" | lolcat
+        else
+            echo "Hi, Felix!"
+        end
+    end
 end
 
-# prompt
-export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
-starship init fish | source
-
-zoxide init fish | source
-
-# greeting message
-function fish_greeting
-    figlet "Hi, eniverz!" | lolcat
+if test -d "$HOME/.cargo/bin"
+    fish_add_path "$HOME/.cargo/bin"
 end
-
-set -x PATH "$HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin/" $PATH
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -27,4 +33,3 @@ else
     end
 end
 # <<< conda initialize <<<
-

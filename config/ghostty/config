@@ -2,10 +2,10 @@
 # custom-shader = ./shaders/sparks-from-fire.glsl
 # custom-shader = ./shaders/water.glsl
 # custom-shader = ./shaders/ripple_cursor.glsl
-custom-shader = ./shaders/cursor_wrap.glsl
+# custom-shader = ./shaders/cursor_wrap.glsl
 
 theme = Catppuccin Mocha
-font-family = CodeNewRoman Nerd Font Mono
+font-family = BlexMono Nerd Font Mono
 font-size = 14
 
 window-padding-x = 3
@@ -18,7 +18,7 @@ mouse-scroll-multiplier = 0.5
 cursor-style=block
 
 # macos-titlebar-style = transparent
-background-opacity = 0.65
+background-opacity = 0.95
 background-blur = 30
 
 selection-clear-on-typing = false
@@ -127,5 +127,4 @@ keybind = super+v=paste_from_clipboard
 keybind = copy=copy_to_clipboard
 keybind = paste=paste_from_clipboard
 keybind = super+shift+v=paste_from_selection
-
 
